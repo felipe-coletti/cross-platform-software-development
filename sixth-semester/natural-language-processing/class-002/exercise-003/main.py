@@ -44,7 +44,7 @@ def feeling(phrase, dictionary):
     return score
 
 
-def analyze_sentiment(phrase, dictionary):
+def analyzeSentiment(phrase, dictionary):
     score = feeling(phrase, dictionary)
 
     result = 1 if score > 0 else -1 if score < 0 else 0
