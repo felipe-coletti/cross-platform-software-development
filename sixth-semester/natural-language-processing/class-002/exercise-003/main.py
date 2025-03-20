@@ -81,7 +81,7 @@ def evaluateModel(inputs, outputs):
 
 
 weightsPath = '/lexicon.txt'
-dataPath = '/analise_sentimento_portugues.csv'
+dataPath = '/sentiment_data.csv'
 
 weightsDict = weights(weightsPath)
 inputs, outputs = data(dataPath)
