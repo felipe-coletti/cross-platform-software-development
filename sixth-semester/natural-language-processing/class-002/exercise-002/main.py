@@ -5,7 +5,7 @@ def tokens(text):
     return re.sub(r'[^\w\s]', '', text).lower().split()
 
 
-def getWeights(filePath):
+def weights(filePath):
     weights = {}
 
     with open(filePath, "r", encoding="utf-8") as file:
@@ -18,11 +18,11 @@ def getWeights(filePath):
     return weights
 
 
-weightsDict = getWeights('/lexicon.txt')
+weightsDict = weights('/lexicon.txt')
 print(weightsDict)
 
 
-def calculateFeeling(phrase, dict):
+def feeling(phrase, dict):
     feeling = 0
     tokens = tokens(phrase)
     
@@ -32,4 +32,4 @@ def calculateFeeling(phrase, dict):
     return feeling
 
 
-print(calculateFeeling('Está um dia lindo hoje.', weightsDict))
+print(feeling('Está um dia lindo hoje.', weightsDict))
