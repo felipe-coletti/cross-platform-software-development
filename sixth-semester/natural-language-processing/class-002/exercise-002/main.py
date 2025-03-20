@@ -22,14 +22,10 @@ weightsDict = weights('/lexicon.txt')
 print(weightsDict)
 
 
-def feeling(phrase, dict):
-    feeling = 0
-    tokens = tokens(phrase)
-    
-    for token in tokens:
-        feeling += dict.get(token, 0)
-    
-    return feeling
+def feeling(phrase, dictionary):
+    score = sum(dictionary.get(token, 0) for token in tokens(phrase))
+
+    return score
 
 
 print(feeling('Está um dia lindo hoje.', weightsDict))
