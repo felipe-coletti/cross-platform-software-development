@@ -38,6 +38,17 @@ class ContactController(private val contactService: ContactService) {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdContact)
     }
 
+    @PutMapping("/{id}")
+    fun updateContact(@PathVariable id: String, @RequestBody updatedContact: Contact): ResponseEntity<Contact> {
+        val wasUpdated = contactService.update(id, updatedContact)
+
+        return if (wasUpdated != null) {
+            ResponseEntity.ok(wasUpdated)
+        } else {
+            ResponseEntity.notFound().build()
+        }
+    }
+
     @DeleteMapping("/{id}")
     fun deleteContact(@PathVariable id: String): ResponseEntity<Void> {
         val wasRemoved = contactService.delete(id)
