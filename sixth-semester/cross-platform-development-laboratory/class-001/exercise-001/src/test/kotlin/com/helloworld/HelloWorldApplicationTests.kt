@@ -1,10 +1,10 @@
-package edu.curso.agendacontato
+package com.helloworld
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class AgendacontatoApplicationTests {
+class HelloWorldApplicationTests {
 
 	@Test
 	fun contextLoads() {
