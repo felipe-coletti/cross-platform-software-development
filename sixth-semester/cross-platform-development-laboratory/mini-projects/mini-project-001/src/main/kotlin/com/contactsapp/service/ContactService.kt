@@ -18,7 +18,7 @@ class ContactService(private val contactRepository: ContactRepository) {
         return contactRepository.save(contact)
     }
 
-    fun updateContact(id: String, updatedContact: Contact): Contact? {
+    fun update(id: String, updatedContact: Contact): Contact? {
         val existingContact = contactRepository.findById(id).orElse(null)
 
         return if (existingContact != null) {
