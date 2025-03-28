@@ -1,76 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="html, metadados, comentários, layout, listas">
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <title>Aulas de desenvolvimento web 1</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="js/contrast.js"></script>
-    <script src="js/font.js"></script>
-</head>
-<body>
-    <div class="acessibility-bar flex-container">
-        <ul class="shortcuts-area">
-            <li><a href="#content-area" acesskey="1" title="Ir para a área de conteúdo">Ir para o conteúdo da página [1]</a></li>
-            <li><a href="#menu" acesskey="2" title="Ir para o menu de navegação">Ir para o menu de navegação [2]</a></li>
-            <li><a href="#footer" acesskey="3" title="Ir para o rodapé">Ir para o rodapé [3]</a></li>
-        </ul>
-        <ul class="options-area">
-            <li><a href="acessibility.html">Acessibilidade</a></li>
-            <li><a href="javascript:void(0);" id="with-contrast">Com contraste</a></li>
-            <li><a href="javascript:void(0);" id="no-contrast">Sem contraste</a></li>
-            <li><a href="javascript:void(0);" id="increase-text">A+</a></li>
-            <li><a href="javascript:void(0);" id="decrease-text">A-</a></li>
-        </ul>
-    </div>
-    <header id="top" class="flex-container">
-        <a href="index.html" title="Voltar para o início"><img class="image" src="assets/images/FATEC_ZONA_LESTE.png" alt="Logo da Fatec da Zona leste em cinza escuro levemente azulado e vermelho"></a>
-    </header>
-    <nav class="flex-container">
-        <label for="hamburger-menu"><img src="assets/images/menu.png" alt="Menu"></label>
-        <input type="checkbox" name="hamburger-menu" id="hamburger-menu">
-        <ul id="menu" class="menu">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="comments.html">Comentários</a></li>
-            <li><a href="metadata.html">Metadados</a></li>
-            <li>
-                <a href="javascript:void(0);">Listas</a>
-                <ul>
-                    <li><a href="ol.html">Lista ordenada</a></li>
-                    <li><a href="ul.html">Lista não ordenada</a></li>
-                </ul>
-            </li>
-            <li><a href="layout.html">Layout</a></li>
-            <li><a href="contact.html">Fale conosco</a></li>
-        </ul>
-    </nav>
-    <main id="content-area" class="flex-container">
-        <ul class="breadcrumb">
-            <li><a href="index.html">Início</a></li>
-            <li>Comentários</li>
-        </ul>
-        <section>
-            <h1>Comentários</h1>
-            <p>Comentários em HTML não são exibidos no navegador, mas podem ajudar a documentar seu código-fonte HTML.</p>
-            <img class="image" src="assets/images/comments.png" alt="Imagem contendo instruções para criar comentários em HTML">
-        </section>
-    </main>
-    <footer id="footer" class="flex-container">
-        <p>&copy; 2022 Felipe Coletti</p>
-    </footer>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="html, metadados, comentários, layout, listas" />
+        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+        <title>Fatec Zona Leste Clone</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/contrast.js"></script>
+        <script src="js/font.js"></script>
+    </head>
+    <body>
+        <div class="acessibility-bar flex-container">
+            <ul class="shortcuts-area">
+                <li>
+                    <a href="#content-area" acesskey="1" title="Ir para a área de conteúdo"
+                        >Ir para o conteúdo da página [1]</a
+                    >
+                </li>
+                <li>
+                    <a href="#menu" acesskey="2" title="Ir para o menu de navegação">Ir para o menu de navegação [2]</a>
+                </li>
+                <li><a href="#footer" acesskey="3" title="Ir para o rodapé">Ir para o rodapé [3]</a></li>
+            </ul>
+            <ul class="options-area">
+                <li><a href="acessibility.html">Acessibilidade</a></li>
+                <li><a href="javascript:void(0);" id="with-contrast">Com contraste</a></li>
+                <li><a href="javascript:void(0);" id="no-contrast">Sem contraste</a></li>
+                <li><a href="javascript:void(0);" id="increase-text">A+</a></li>
+                <li><a href="javascript:void(0);" id="decrease-text">A-</a></li>
+            </ul>
         </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-</body>
+        <header id="top" class="flex-container">
+            <a href="index.html" title="Voltar para o início"
+                ><img
+                    class="image"
+                    src="assets/images/FATEC_ZONA_LESTE.png"
+                    alt="Logo da Fatec da Zona leste em cinza escuro levemente azulado e vermelho"
+            /></a>
+        </header>
+        <nav class="flex-container">
+            <label for="hamburger-menu"><img src="assets/images/menu.png" alt="Menu" /></label>
+            <input type="checkbox" name="hamburger-menu" id="hamburger-menu" />
+            <ul id="menu" class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="comments.html">Comentários</a></li>
+                <li><a href="metadata.html">Metadados</a></li>
+                <li>
+                    <a href="javascript:void(0);">Listas</a>
+                    <ul>
+                        <li><a href="ol.html">Lista Ordenada</a></li>
+                        <li><a href="ul.html">Lista Não Ordenada</a></li>
+                    </ul>
+                </li>
+                <li><a href="layout.html">Layout</a></li>
+                <li><a href="contact.html">Fale Conosco</a></li>
+            </ul>
+        </nav>
+        <main id="content-area" class="flex-container">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Início</a></li>
+                <li>Comentários</li>
+            </ul>
+            <section>
+                <h1>Comentários</h1>
+                <p>
+                    Comentários em HTML não são exibidos no navegador, mas podem ajudar a documentar seu código-fonte
+                    HTML.
+                </p>
+                <img
+                    class="image"
+                    src="assets/images/comments.png"
+                    alt="Imagem contendo instruções para criar comentários em HTML"
+                />
+            </section>
+        </main>
+        <footer id="footer" class="flex-container">
+            <p>&copy; 2022 Felipe Coletti</p>
+        </footer>
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app')
+        </script>
+    </body>
 </html>
