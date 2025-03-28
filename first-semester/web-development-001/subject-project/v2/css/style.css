@@ -194,6 +194,11 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
+}
+
+#footer .paragraph {
+    color: #c0cdd1;
 }
 
 .container {
