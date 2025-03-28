@@ -139,10 +139,11 @@ body {
 }
 
 .section {
-    background-color: #fff;
+    background: linear-gradient(to bottom, #c21d16 20%, #fff 20%);
 }
 
 .section .container {
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -203,6 +204,7 @@ body {
 #header,
 #main,
 .section,
+.section .container,
 #footer {
     padding: 2rem;
 }
