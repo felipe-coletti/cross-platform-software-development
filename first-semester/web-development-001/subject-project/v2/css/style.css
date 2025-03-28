@@ -51,8 +51,6 @@ body {
     color: #c0cdd1;
     display: flex;
     text-decoration: none;
-    padding-block: 1rem;
-    padding-inline: 0.75rem;
 }
 
 .menu-item:hover {
@@ -86,8 +84,6 @@ body {
     color: #4d6269;
     display: flex;
     font-size: 0.875rem;
-    padding-block: 1rem;
-    padding-inline: 0.75rem;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -278,6 +274,8 @@ body {
     background-color: #131819;
 }
 
+.menu-item,
+.dropdown-item,
 .input,
 .select,
 .textarea,
@@ -322,7 +320,7 @@ body {
 
     .dropdown-item {
         color: #c0cdd1;
-        padding-left: 1.5rem;
+        padding-left: 2rem;
     }
 
     .dropdown-item:hover {
