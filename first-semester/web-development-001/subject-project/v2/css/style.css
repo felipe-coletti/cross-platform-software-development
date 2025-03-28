@@ -139,7 +139,7 @@ body {
 }
 
 .section {
-    background: linear-gradient(to bottom, #c21d16 20%, #fff 20%);
+    background: linear-gradient(to bottom, #c21d16 100px, #fff 100px);
 }
 
 .section .container {
@@ -203,7 +203,6 @@ body {
 
 #header,
 #main,
-.section,
 .section .container,
 #footer {
     padding: 2rem;
