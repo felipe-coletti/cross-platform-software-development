@@ -43,7 +43,7 @@ for i in sorted(lexicalRichness, key = lexicalRichness.get, reverse=True):
 
 richerText = next(iter(lexicalRichnessRanking))
 
-print('Texto com a maior riqueza lexical: {}'.format(richerText))
+print(f'Texto com a maior riqueza lexical: {richerText}')
 
 # Extra
-print('Textos com maior riqueza lexical: {}'.format(lexicalRichnessRanking))
+print(f'Textos com maior riqueza lexical: {lexicalRichnessRanking}')

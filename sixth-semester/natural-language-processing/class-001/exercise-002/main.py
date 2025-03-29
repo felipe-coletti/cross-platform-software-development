@@ -32,10 +32,10 @@ negativeCount = sum(1 for comment in comments if comment['feeling'] == 'Negativo
 positivePercent = positiveCount / totalCount * 100
 negativePercent = negativeCount / totalCount * 100
 
-print('Quantidade de comentários positivos: {}'.format(positiveCount))
-print('Quantidade de comentários negativos: {}'.format(negativeCount, negativePercent))
-print('Porcentagem de comentários positivos: {}%'.format(positivePercent))
-print('Porcentagem de comentários negativos: {}%'.format(negativePercent))
+print(f'Quantidade de comentários positivos: {positiveCount}')
+print(f'Quantidade de comentários negativos: {negativeCount}')
+print(f'Porcentagem de comentários positivos: {positivePercent}%')
+print(f'Porcentagem de comentários negativos: {negativePercent}%')
 
 print('Comentários positivos:')
 
@@ -49,4 +49,4 @@ for comment in comments:
     if comment['feeling'] == 'Negativo':
         comment['feelingValue'] = 0
 
-print('Novos dados: {}'.format(comments))
+print(f'Novos dados: {comments}')
