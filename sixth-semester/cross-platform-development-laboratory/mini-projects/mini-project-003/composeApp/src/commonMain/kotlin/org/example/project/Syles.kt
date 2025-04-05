@@ -19,7 +19,7 @@ data class ColumnStyle(
 val mainColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxSize()
-        .background(Color(0xFFE0F7FA))
+        .background(Color.White)
         .padding(16.dp)
 )
 
@@ -34,14 +34,12 @@ val headerColumnStyle = ColumnStyle(
 val formColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxWidth()
-        .background(Color.White)
         .padding(16.dp)
 )
 
 val listColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxWidth()
-        .background(Color(0xFFE3F2FD))
         .padding(16.dp)
 )
 
