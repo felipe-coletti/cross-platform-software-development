@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-
 data class ColumnStyle(
     val modifier: Modifier,
     val horizontalAlignment: Alignment.Horizontal = Alignment.Start,
@@ -22,7 +21,19 @@ data class ColumnStyle(
 val mainColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxSize()
+        .background(Color.White),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Center
+)
+
+val screenColumnStyle = ColumnStyle(
+    modifier = Modifier
+        .fillMaxSize()
         .background(Color.White)
+)
+
+val screenContentColumnStyle = ColumnStyle(
+    modifier = Modifier
         .padding(16.dp)
 )
 
@@ -37,17 +48,16 @@ val headerColumnStyle = ColumnStyle(
 val formColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxWidth()
-        .padding(16.dp)
 )
 
 val listColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxWidth()
-        .padding(16.dp)
 )
 
 val cardColumnStyle = ColumnStyle(
     modifier = Modifier
+        .fillMaxWidth()
         .padding(8.dp)
 )
 

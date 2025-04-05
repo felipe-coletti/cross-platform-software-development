@@ -7,6 +7,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.example.project.styles.listColumnStyle
+import org.example.project.styles.cardColumnStyle
 import org.example.project.models.Pet
 
 @Composable
@@ -16,10 +18,7 @@ fun PetList(pets: List<Pet>) {
         return
     }
 
-    LazyColumn(
-        modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
+    LazyColumn(modifier = listColumnStyle.modifier) {
         items(pets) { pet ->
             PetListItem(pet)
         }
@@ -28,7 +27,7 @@ fun PetList(pets: List<Pet>) {
 
 @Composable
 fun PetListItem(pet: Pet) {
-    Column(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
+    Column(modifier = cardColumnStyle.modifier) {
         Text("Nome: ${pet.name}")
         Text("Raça: ${pet.breed}")
         Text("Peso: ${pet.weight} kg")

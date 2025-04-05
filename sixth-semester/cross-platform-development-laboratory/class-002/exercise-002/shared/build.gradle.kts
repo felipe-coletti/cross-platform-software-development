@@ -30,7 +30,6 @@ kotlin {
             commonWebpackConfig {
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
                     static = (static ?: mutableListOf()).apply {
-                        // Serve sources to debug inside browser
                         add(rootDirPath)
                         add(projectDirPath)
                     }
@@ -40,9 +39,7 @@ kotlin {
     }
     
     sourceSets {
-        commonMain.dependencies {
-            // put your Multiplatform dependencies here
-        }
+        commonMain.dependencies {}
     }
 }
 
