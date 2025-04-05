@@ -2,9 +2,10 @@ package org.example.project.components
 
 import androidx.compose.material.*
 import androidx.compose.runtime.*
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.*
 import org.example.project.models.Tutor
 import org.example.project.styles.ColumnStyle
+import org.example.project.styles.formColumnStyle
 
 val tutors = mutableStateOf(listOf<Tutor>())
 val tutorName = mutableStateOf("")

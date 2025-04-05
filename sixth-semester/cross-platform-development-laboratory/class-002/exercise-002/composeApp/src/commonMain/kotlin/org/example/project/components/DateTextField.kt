@@ -7,6 +7,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.foundation.layout.*
+import androidx.compose.ui.Modifier
 
 @Composable
 fun DateTextField(dateState: MutableState<String>) {

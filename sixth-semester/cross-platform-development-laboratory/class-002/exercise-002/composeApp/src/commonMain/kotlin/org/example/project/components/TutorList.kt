@@ -6,11 +6,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.example.project.components.TutorForm
+import org.example.project.styles.listColumnStyle
+import org.example.project.styles.cardColumnStyle
 
 @Composable
 fun TutorList() {
     LazyColumn(modifier = listColumnStyle.modifier) {
-        items(tutores.value) { tutor ->
+        items(tutors.value) { tutor ->
             Column(modifier = cardColumnStyle.modifier) {
                 Text("Nome: ${tutor.name}")
                 Text("Telefone: ${tutor.phone}")

@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.example.project.screens.TutorScreen
 import org.example.project.screens.PetScreen
+import androidx.compose.foundation.layout.Spacer
 
 @Composable
 fun App() {

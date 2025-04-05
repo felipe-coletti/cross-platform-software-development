@@ -6,9 +6,16 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.example.project.styles.listColumnStyle
+import org.example.project.styles.cardColumnStyle
+import org.example.project.viewmodel.PetViewModel
+import org.example.project.models.Pet
+import java.text.DecimalFormat
 
 @Composable
-fun PetList() {
+fun PetList(viewModel: PetViewModel) {
+    val pets by viewModel.petList.collectAsState()
+
     LazyColumn(modifier = listColumnStyle.modifier) {
         items(pets.value) { pet ->
             Column(modifier = cardColumnStyle.modifier) {
