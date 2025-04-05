@@ -1,15 +1,11 @@
 package org.example.project.viewmodel
 
-import androidx.lifecycle.ViewModel
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import org.example.project.models.Pet
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.mutableStateOf
 
-class PetViewModel : ViewModel() {
+class PetViewModel {
     var pets by mutableStateOf(listOf<Pet>())
         private set
 
@@ -23,9 +19,16 @@ class PetViewModel : ViewModel() {
         val weightValue = weight.toDoubleOrNull() ?: return
         if (name.isBlank() || breed.isBlank() || tutor.isBlank() || birthDate.length != 10) return
 
-        val pet = Pet(name, breed, weightValue, birthDate, tutor)
+        val pet = Pet(
+            name = name,
+            breed = breed,
+            weight = weightValue,
+            birthDate = birthDate,
+            tutor = tutor
+        )
         pets = pets + pet
 
+        // Limpa os campos
         name = ""
         breed = ""
         weight = ""

@@ -1,25 +1,27 @@
-import org.example.project.utils.inputMasks.applyDateMask
+package org.example.project.components
 
-import androidx.compose.material.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.text.input.OffsetMapping
-import androidx.compose.ui.text.input.TransformedText
-import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.foundation.layout.*
-import androidx.compose.ui.Modifier
+import androidx.compose.material.Text
+import androidx.compose.material.OutlinedTextField
+import androidx.compose.runtime.Composable
 
 @Composable
-fun DateTextField(dateState: MutableState<String>) {
-    TextField(
-        value = dateState.value,
-        onValueChange = { newValue ->
-            dateState.value = applyDateMask(newValue)
+fun DateTextField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    label: String = "Data de nascimento"
+) {
+    OutlinedTextField(
+        value = value,
+        onValueChange = {
+            val cleaned = it.filter { c -> c.isDigit() }
+            val formatted = buildString {
+                for (i in cleaned.indices) {
+                    append(cleaned[i])
+                    if (i == 1 || i == 3) append('/')
+                }
+            }.take(10)
+            onValueChange(formatted)
         },
-        label = { Text("Data de Nascimento") },
-        placeholder = { Text("DD/MM/AAAA") },
-        singleLine = true,
-        modifier = Modifier.fillMaxWidth()
+        label = { Text(label) }
     )
 }

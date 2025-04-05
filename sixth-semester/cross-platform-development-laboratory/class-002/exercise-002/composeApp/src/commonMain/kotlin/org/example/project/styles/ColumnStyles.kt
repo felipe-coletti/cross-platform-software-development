@@ -30,7 +30,7 @@ val headerColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxWidth()
         .background(Color(0xFFFFF176))
-        .padding(vertical = 16.dp)
+        .padding(vertical = 16.dp),
     horizontalAlignment = Alignment.CenterHorizontally
 )
 

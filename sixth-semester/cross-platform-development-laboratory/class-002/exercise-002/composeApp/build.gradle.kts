@@ -1,3 +1,4 @@
+// Top of file
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
@@ -18,7 +19,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -29,9 +30,9 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     jvm("desktop")
-    
+
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         moduleName = "composeApp"
@@ -42,7 +43,6 @@ kotlin {
                 outputFileName = "composeApp.js"
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
                     static = (static ?: mutableListOf()).apply {
-                        // Serve sources to debug inside browser
                         add(rootDirPath)
                         add(projectDirPath)
                     }
@@ -51,28 +51,34 @@ kotlin {
         }
         binaries.executable()
     }
-    
+
     sourceSets {
-        val desktopMain by getting
-        
-        androidMain.dependencies {
-            implementation(compose.preview)
-            implementation(libs.androidx.activity.compose)
+        val commonMain by getting {
+            dependencies {
+                implementation(compose.runtime)
+                implementation(compose.foundation)
+                implementation(compose.material)
+                implementation(compose.ui)
+                implementation(compose.components.resources)
+                implementation(compose.components.uiToolingPreview)
+                implementation(libs.androidx.lifecycle.viewmodel)
+                implementation(libs.androidx.lifecycle.runtime.compose)
+                implementation(projects.shared)
+            }
         }
-        commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
-            implementation(libs.androidx.lifecycle.viewmodel)
-            implementation(libs.androidx.lifecycle.runtime.compose)
-            implementation(projects.shared)
+
+        val androidMain by getting {
+            dependencies {
+                implementation(compose.preview)
+                implementation(libs.androidx.activity.compose)
+            }
         }
-        desktopMain.dependencies {
-            implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutines.swing)
+
+        val desktopMain by getting {
+            dependencies {
+                implementation(compose.desktop.currentOs)
+                implementation(libs.kotlinx.coroutines.swing)
+            }
         }
     }
 }
