@@ -20,9 +20,11 @@ fun PetScreen() {
 
     Column(modifier = screenColumnStyle.modifier) {
         Header("Pets")
-        Column(modifier = screenContentColumnStyle.modifier) {
+        Column(
+            modifier = screenContentColumnStyle.modifier,
+            verticalArrangement = screenColumnStyle.verticalArrangement
+        ) {
             PetForm(viewModel)
-            Spacer(modifier = Modifier.height(16.dp))
             PetList(viewModel.pets)
         }
     }

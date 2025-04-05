@@ -10,18 +10,15 @@ import org.example.project.components.TutorForm
 import org.example.project.styles.listColumnStyle
 import org.example.project.styles.cardColumnStyle
 import org.example.project.models.Tutor
-import org.example.project.components.TutorListItem
 
 @Composable
-fun TutorList(tutors: List<Tutor>) {
-    if (tutors.isEmpty()) {
-        Text("Nenhum tutor cadastrado ainda.")
-        return
-    }
-
-    LazyColumn(modifier = listColumnStyle.modifier) {
-        items(tutors) { tutor ->
-            TutorListItem(tutor)
-        }
+fun TutorListItem(tutor: Tutor) {
+    Column(
+        modifier = cardColumnStyle.modifier,
+        verticalArrangement = cardColumnStyle.verticalArrangement
+    ) {
+        Text("Nome: ${tutor.name}")
+        Text("Telefone: ${tutor.phone}")
+        Text("Documento: ${tutor.document}")
     }
 }

@@ -11,6 +11,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import org.example.project.styles.headerColumnStyle
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.FontWeight
 
 @Composable
 fun Header( title: String ) {
@@ -18,6 +20,11 @@ fun Header( title: String ) {
         modifier = headerColumnStyle.modifier,
         horizontalAlignment = headerColumnStyle.horizontalAlignment
     ) {
-        Text(title)
+        Text(
+            text = title,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White
+        )
     }
 }

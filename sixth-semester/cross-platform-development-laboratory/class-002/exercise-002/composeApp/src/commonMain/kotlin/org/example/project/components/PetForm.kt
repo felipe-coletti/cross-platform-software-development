@@ -10,15 +10,18 @@ import org.example.project.viewmodel.PetViewModel
 
 @Composable
 fun PetForm(viewModel: PetViewModel) {
-    Column (modifier = formColumnStyle.modifier) {
+    Column (
+        modifier = formColumnStyle.modifier,
+        horizontalAlignment = formColumnStyle.horizontalAlignment,
+        verticalArrangement = formColumnStyle.verticalArrangement
+    ) {
         TextField(value = viewModel.name, onValueChange = { viewModel.name = it }, label = { Text("Nome") })
         TextField(value = viewModel.breed, onValueChange = { viewModel.breed = it }, label = { Text("Raça") })
         TextField(value = viewModel.weight, onValueChange = { viewModel.weight = it }, label = { Text("Peso") })
         TextField(value = viewModel.birthDate, onValueChange = { viewModel.birthDate = it }, label = { Text("Data de nascimento (DD/MM/AAAA)") })
         TextField(value = viewModel.tutor, onValueChange = { viewModel.tutor = it }, label = { Text("Tutor") })
-
         Button(onClick = { viewModel.addPet() }) {
-            Text("Adicionar pet")
+            Text("Adicionar")
         }
     }
 }

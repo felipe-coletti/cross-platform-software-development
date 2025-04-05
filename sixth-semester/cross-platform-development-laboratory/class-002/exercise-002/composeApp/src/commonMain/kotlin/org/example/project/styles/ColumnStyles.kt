@@ -18,36 +18,33 @@ data class ColumnStyle(
     val verticalArrangement: Arrangement.Vertical = Arrangement.Top
 )
 
-val mainColumnStyle = ColumnStyle(
+val screenColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxSize()
         .background(Color.White),
     horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.Center
-)
-
-val screenColumnStyle = ColumnStyle(
-    modifier = Modifier
-        .fillMaxSize()
-        .background(Color.White)
+    verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically)
 )
 
 val screenContentColumnStyle = ColumnStyle(
     modifier = Modifier
-        .padding(16.dp)
+        .padding(16.dp),
+    verticalArrangement = Arrangement.spacedBy(16.dp)
 )
 
 val headerColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxWidth()
-        .background(Color(0xFFFFF176))
+        .background(Color.Blue)
         .padding(vertical = 16.dp),
     horizontalAlignment = Alignment.CenterHorizontally
 )
 
 val formColumnStyle = ColumnStyle(
     modifier = Modifier
-        .fillMaxWidth()
+        .fillMaxWidth(),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.spacedBy(8.dp)
 )
 
 val listColumnStyle = ColumnStyle(
@@ -58,6 +55,7 @@ val listColumnStyle = ColumnStyle(
 val cardColumnStyle = ColumnStyle(
     modifier = Modifier
         .fillMaxWidth()
-        .padding(8.dp)
+        .padding(8.dp),
+    verticalArrangement = Arrangement.spacedBy(4.dp)
 )
 

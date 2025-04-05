@@ -26,9 +26,9 @@ class PetViewModel {
             birthDate = birthDate,
             tutor = tutor
         )
+
         pets = pets + pet
 
-        // Limpa os campos
         name = ""
         breed = ""
         weight = ""

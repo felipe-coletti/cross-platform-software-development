@@ -10,18 +10,17 @@ import androidx.compose.ui.unit.dp
 import org.example.project.styles.listColumnStyle
 import org.example.project.styles.cardColumnStyle
 import org.example.project.models.Pet
-import org.example.project.components.PetListItem
 
 @Composable
-fun PetList(pets: List<Pet>) {
-    if (pets.isEmpty()) {
-        Text("Nenhum pet cadastrado ainda.")
-        return
-    }
-
-    LazyColumn(modifier = listColumnStyle.modifier) {
-        items(pets) { pet ->
-            PetListItem(pet)
-        }
+fun PetListItem(pet: Pet) {
+    Column(
+        modifier = cardColumnStyle.modifier,
+        verticalArrangement = cardColumnStyle.verticalArrangement
+    ) {
+        Text("Nome: ${pet.name}")
+        Text("Raça: ${pet.breed}")
+        Text("Peso: ${pet.weight} kg")
+        Text("Nascimento: ${pet.birthDate}")
+        Text("Tutor: ${pet.tutor}")
     }
 }
