@@ -12,7 +12,7 @@ def data(filePath):
 
         for row in csvReader:
             feeling = row[0]
-            feeling = 1 if feeling == 'positivo' else 0 if feeling == 'neutro' else -1 if feeling == 'negativo'
+            feeling = 1 if feeling == 'positivo' else -1 if feeling == 'negativo' else 'neutro'
             phrase = row[1].replace('"', '')
             
             inputs.append(phrase)
@@ -57,7 +57,7 @@ def evaluateModel(inputs, outputs):
 
     for i, sentence in enumerate(inputs):
         try:
-            predicted = analyze_sentiment(sentence, weightsDict)
+            predicted = analyzeSentiment(sentence, weightsDict)
             actual = outputs[i]
 
             if predicted == 1:
