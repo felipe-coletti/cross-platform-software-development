@@ -23,6 +23,7 @@ Welcome to the **Cross-Platform Software Development Repository**! This reposito
 │   │   │   ├── 📄 README.md            # Description of the main project for this subject
 │   │   │   ├── 📄 implementation.ext   # Project files
 │   │   │   ├── ...
+├── ...
 └── 📄 README.md            # General repository overview
 ```
 
@@ -30,7 +31,7 @@ Welcome to the **Cross-Platform Software Development Repository**! This reposito
 Each semester has its own folder (e.g., `first-semester`), containing subject-specific directories. Each subject may include:
 -   **Class activities (`class-001`, `class-002`, etc.)** with individual exercises.
 -   **Mini-projects (`mini-projects`)** containing different project-based assignments.
--   **A subject project (subject-project)**, which serves as a reference project developed in class to illustrate key topics covered during the subject.
+-   **A subject project (`subject-project`)**, which serves as a reference project developed in class to illustrate key topics covered during the subject.
 
 Not all subjects will have all types of folders—some may only have class activities, mini-projects, or a subject project.
 
