@@ -6,29 +6,33 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import org.example.project.models.Contact
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-
-val name = mutableStateOf("")
-val phone : MutableState<String> = mutableStateOf("")
-val email : MutableState<String> = mutableStateOf("")
-val list : MutableState<List<Contact>> = mutableStateOf( listOf() )
-
-fun createContact() { 
-    val contact = Contact( name.value, phone.value, email.value )
-    val newList : MutableList<Contact> = mutableListOf()
-
-    newList.addAll( list.value )
-    newList.add( contact )
-    list.value = newList.toList()
-    
-    println("Lista possui ${list.value.size} elementos")
-    println(list.value)
-}
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import org.example.project.styles.formColumnStyle
 
 @Composable
-fun Form() { 
+fun Form(list: MutableState<List<Contact>>) {
+    val name = remember { mutableStateOf("") }
+    val phone = remember { mutableStateOf("") }
+    val email = remember { mutableStateOf("") }
+
+    fun createContact() { 
+        val newContact = Contact( name.value, phone.value, email.value )
+        val newList = list.value.toMutableList()
+
+        newList.add(newContact)
+        list.value = newList
+
+        println("Lista possui ${list.value.size} elementos")
+        println(list.value)
+
+        name.value = ""
+        phone.value = ""
+        email.value = ""
+    }
+    
     Column( modifier = formColumnStyle.modifier ) {
         TextField(
             value = name.value,

@@ -12,13 +12,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import org.example.project.styles.listColumnStyle
+import org.example.project.models.Contact
 
 @Composable
-fun ContactList() {
+fun ContactList(list: List<Contact>) {
+    if (list.isEmpty()) {
+        Text("Nenhum contato cadastrado ainda.")
+        return
+    }
+
     LazyColumn( modifier = listColumnStyle.modifier ) {
-        items(list.value) { contact ->  
+        items(list) { contact ->  
             Column (modifier = Modifier.padding(10.dp)) {
-                Text(contact.nome)
+                Text(contact.name)
                 Text(contact.phone)
                 Text(contact.email)
             }
