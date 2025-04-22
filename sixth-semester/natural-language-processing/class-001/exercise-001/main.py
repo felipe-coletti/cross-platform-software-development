@@ -20,3 +20,12 @@ print(excerpt1)
 excerpt2 = text[start + 1:end]
 
 print(excerpt2)
+
+# Extração de trecho com fatiamento de string encapisulado
+def excerpt(text, start, end):
+    if start == -1 or end == -1:
+        return ''
+    
+    return text[start + 1:end].strip()
+
+print(excerpt(text, start, end))
