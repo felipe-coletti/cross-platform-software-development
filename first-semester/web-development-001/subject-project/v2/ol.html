@@ -1,109 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="html, metadados, comentários, layout, listas" />
-        <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-        <title>Fatec Ourinhos Clone</title>
-        <link rel="stylesheet" href="css/style.css" />
-        <script src="js/menu.js" defer></script>
-        <script src="js/hamburger-menu.js" defer></script>
-        <script src="js/dropdown.js" defer></script>
-    </head>
-    <body>
-        <header id="header">
-            <div class="container">
-                <a class="logo" href="index.html" title="Voltar para o início">
-                    <img
-                        class="logo-image"
-                        src="assets/images/logo-fatec.png"
-                        alt="Logo branca da Fatec da Zona leste"
-                    />
-                </a>
-                <a
-                    class="logo"
-                    href="https://www.cps.sp.gov.br/"
-                    title="Ir para Centro Paula Souza"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <img class="logo-image" src="assets/images/logo-cps.png" alt="Logo branca do Centro Paula Souza" />
-                </a>
-                <a
-                    class="logo"
-                    href="https://sp.gov.br/sp"
-                    title="Ir para Governo do Estado de São Paulo"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <img
-                        class="logo-image"
-                        src="assets/images/logo-governo-do-estado-sp.png"
-                        alt="Logo branca do Voverno do Estado de São Paulo"
-                    />
-                </a>
-            </div>
-        </header>
-        <nav id="nav-bar">
-            <div class="container">
-                <ul id="menu" class="list">
-                    <li><a class="menu-item" href="index.html">Início</a></li>
-                    <li><a class="menu-item" href="comments.html">Comentários</a></li>
-                    <li><a class="menu-item" href="metadata.html">Metadados</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-label menu-item" href="javascript:void(0);">Listas</a>
-                        <ul class="dropdown-menu list">
-                            <li><a class="dropdown-item" href="ol.html">Lista Ordenada</a></li>
-                            <li><a class="dropdown-item" href="ul.html">Lista Não Ordenada</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="menu-item" href="layout.html">Layout</a></li>
-                    <li><a class="menu-item" href="contact.html">Fale Conosco</a></li>
-                </ul>
-                <h3 class="tertiary-title title mobile">Fatec Zona Leste</h3>
-                <button id="menu-button" class="mobile">
-                    <img src="assets/images/menu.png" alt="Botão do menu" />
-                </button>
-            </div>
-            <ul id="mobile-menu" class="list mobile">
-                <li><a class="menu-item" href="index.html">Início</a></li>
-                <li><a class="menu-item" href="comments.html">Comentários</a></li>
-                <li><a class="menu-item" href="metadata.html">Metadados</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-label menu-item" href="javascript:void(0);">Listas</a>
-                    <ul class="dropdown-menu list">
-                        <li><a class="dropdown-item" href="ol.html">Lista Ordenada</a></li>
-                        <li><a class="dropdown-item" href="ul.html">Lista Não Ordenada</a></li>
-                    </ul>
-                </li>
-                <li><a class="menu-item" href="layout.html">Layout</a></li>
-                <li><a class="menu-item" href="contact.html">Fale Conosco</a></li>
-            </ul>
-        </nav>
-        <main id="main">
-            <div class="container">
-                <h1 class="primary-title title">Lista ordenada</h1>
-            </div>
-        </main>
-        <section class="section">
-            <div class="container">
-                <p class="paragraph">
-                    Uma lista ordenada começa com a tag &lt;ol&gt;. Cada item da lista começa com a tag &lt;li&gt;.
-                </p>
-                <p class="paragraph">Os itens da lista serão marcados com números por padrão.</p>
-                <img
-                    class="image"
-                    src="assets/images/ol.png"
-                    alt="Imagem contendo instruções para criar uma lista ordenada em HTML"
-                />
-            </div>
-        </section>
-        <footer id="footer" class="flex-container">
-            <div class="container">
-                <p paragraph>&copy; 2025 Felipe Coletti</p>
-            </div>
-        </footer>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="keywords" content="html, metadados, comentários, layout, listas" />
+		<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+		<title>Fatec Ourinhos Clone</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/menu.js" defer></script>
+		<script src="js/hamburger-menu.js" defer></script>
+		<script src="js/dropdown.js" defer></script>
+	</head>
+	<body>
+		<header id="header">
+			<div class="container">
+				<a class="logo" href="index.html" title="Voltar para o início">
+					<img class="logo-image" src="assets/images/logo-fatec.png" alt="Logo branca da Fatec da Zona leste" />
+				</a>
+				<a class="logo" href="https://www.cps.sp.gov.br/" title="Ir para Centro Paula Souza" target="_blank" rel="noopener">
+					<img class="logo-image" src="assets/images/logo-cps.png" alt="Logo branca do Centro Paula Souza" />
+				</a>
+				<a class="logo" href="https://sp.gov.br/sp" title="Ir para Governo do Estado de São Paulo" target="_blank" rel="noopener">
+					<img class="logo-image" src="assets/images/logo-governo-do-estado-sp.png" alt="Logo branca do Voverno do Estado de São Paulo" />
+				</a>
+			</div>
+		</header>
+		<nav id="nav-bar">
+			<div class="container">
+				<ul id="menu" class="list">
+					<li><a class="menu-item" href="index.html">Início</a></li>
+					<li><a class="menu-item" href="comments.html">Comentários</a></li>
+					<li><a class="menu-item" href="metadata.html">Metadados</a></li>
+					<li class="dropdown">
+						<a class="dropdown-label menu-item" href="javascript:void(0);">Listas</a>
+						<ul class="dropdown-menu list">
+							<li><a class="dropdown-item" href="ol.html">Lista Ordenada</a></li>
+							<li><a class="dropdown-item" href="ul.html">Lista Não Ordenada</a></li>
+						</ul>
+					</li>
+					<li><a class="menu-item" href="layout.html">Layout</a></li>
+					<li><a class="menu-item" href="contact.html">Fale Conosco</a></li>
+				</ul>
+				<h3 class="tertiary-title title mobile">Fatec Zona Leste</h3>
+				<button id="menu-button" class="mobile">
+					<img src="assets/images/menu.png" alt="Botão do menu" />
+				</button>
+			</div>
+			<ul id="mobile-menu" class="list mobile">
+				<li><a class="menu-item" href="index.html">Início</a></li>
+				<li><a class="menu-item" href="comments.html">Comentários</a></li>
+				<li><a class="menu-item" href="metadata.html">Metadados</a></li>
+				<li class="dropdown">
+					<a class="dropdown-label menu-item" href="javascript:void(0);">Listas</a>
+					<ul class="dropdown-menu list">
+						<li><a class="dropdown-item" href="ol.html">Lista Ordenada</a></li>
+						<li><a class="dropdown-item" href="ul.html">Lista Não Ordenada</a></li>
+					</ul>
+				</li>
+				<li><a class="menu-item" href="layout.html">Layout</a></li>
+				<li><a class="menu-item" href="contact.html">Fale Conosco</a></li>
+			</ul>
+		</nav>
+		<main id="main">
+			<div class="container">
+				<h1 class="primary-title title">Lista ordenada</h1>
+			</div>
+		</main>
+		<section class="section">
+			<div class="container">
+				<p class="paragraph">Uma lista ordenada começa com a tag &lt;ol&gt;. Cada item da lista começa com a tag &lt;li&gt;.</p>
+				<p class="paragraph">Os itens da lista serão marcados com números por padrão.</p>
+				<img class="image" src="assets/images/ol.png" alt="Imagem contendo instruções para criar uma lista ordenada em HTML" />
+			</div>
+		</section>
+		<footer id="footer" class="flex-container">
+			<div class="container">
+				<p paragraph>&copy; 2025 Felipe Coletti</p>
+			</div>
+		</footer>
+	</body>
 </html>
