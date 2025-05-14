@@ -7,9 +7,7 @@
 		<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
 		<title>Fatec Ourinhos Clone</title>
 		<link rel="stylesheet" href="css/style.css" />
-		<script src="js/menu.js" defer></script>
-		<script src="js/hamburger-menu.js" defer></script>
-		<script src="js/dropdown.js" defer></script>
+		<script type="module" src="js/main.js" defer></script>
 	</head>
 	<body>
 		<header id="header">
@@ -42,11 +40,11 @@
 					<li><a class="menu-item" href="contact.html">Fale Conosco</a></li>
 				</ul>
 				<h3 class="tertiary-title title mobile">Fatec Zona Leste</h3>
-				<button id="menu-button" class="mobile">
+				<button id="menu-button" class="mobile" aria-expanded="false">
 					<img src="assets/images/menu.png" alt="Botão do menu" />
 				</button>
 			</div>
-			<ul id="mobile-menu" class="list mobile">
+			<ul id="mobile-menu" class="list mobile" aria-hidden="true">
 				<li><a class="menu-item" href="index.html">Início</a></li>
 				<li><a class="menu-item" href="comments.html">Comentários</a></li>
 				<li><a class="menu-item" href="metadata.html">Metadados</a></li>
