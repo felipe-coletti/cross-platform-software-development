@@ -1,5 +1,7 @@
 :root {
-	--color-accent: #c21d16;
+	--color-accent-primary: #c21d16;
+	--color-accent-secondary: #d42018;
+	--color-accent-tertiary: #ab1914;
 	--color-background-primary: #fff;
 	--color-background-secondary: #283337;
 	--color-background-tertiary: #4d6269;
@@ -45,7 +47,7 @@ body {
 #nav-bar {
 	align-items: center;
 	background-color: var(--color-background-secondary);
-	border-bottom: 5px solid var(--color-accent);
+	border-bottom: 5px solid var(--color-accent-primary);
 	color: var(--color-background-primary);
 	display: flex;
 	padding-inline: 2rem;
@@ -138,10 +140,10 @@ body {
 }
 
 #main {
-	background-color: var(--color-accent);
-	color: var(--color-background-primary);
-	text-align: center;
-	text-transform: uppercase;
+	align-items: center;
+	background: linear-gradient(to bottom, var(--color-accent-tertiary) 200px, var(--color-background-primary) 100px);
+	flex-direction: column;
+	padding-inline: 2rem;
 }
 
 .primary-title {
@@ -149,10 +151,12 @@ body {
 }
 
 .section {
-	background: linear-gradient(to bottom, var(--color-accent) 100px, var(--color-background-primary) 100px);
+	color: var(--color-background-primary);
+	text-align: center;
+	text-transform: uppercase;
 }
 
-.section .container {
+#main .container {
 	background-color: var(--color-background-primary);
 	display: flex;
 	flex-direction: column;
@@ -196,7 +200,7 @@ body {
 
 #footer {
 	background-color: var(--color-background-secondary);
-	border-top: 5px solid var(--color-accent);
+	border-top: 5px solid var(--color-accent-primary);
 	color: var(--color-background-primary);
 }
 
@@ -217,8 +221,8 @@ body {
 }
 
 #header,
-#main,
-.section .container,
+.section,
+#main .container,
 #footer {
 	padding: 2rem;
 }
@@ -346,6 +350,10 @@ body {
 	.dropdown-item.active {
 		background-color: var(--color-hover-secondary);
 		color: var(--color-background-primary);
+	}
+
+	#main {
+		padding-inline: 0;
 	}
 
 	.primary-title {
