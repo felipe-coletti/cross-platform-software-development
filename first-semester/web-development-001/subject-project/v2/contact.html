@@ -82,94 +82,121 @@
 			</ul>
 		</nav>
 		<main id="main">
-			<div class="container">
+			<section id="main-header">
 				<h1 class="primary-title title">Fale conosco</h1>
-			</div>
+			</section>
+			<section id="main-content">
+				<div class="container">
+					<form class="form" action="" method="post" name="contact" id="contact">
+						<fieldset class="fieldset">
+							<legend class="legend secondary-title title">Dados Pessoais</legend>
+							<label class="label" for="name" class="required">Nome</label>
+							<input
+								class="input"
+								type="text"
+								name="name"
+								id="name"
+								placeholder="Nome completo"
+								required
+							/>
+							<label class="label" for="cpf" class="required">CPF</label>
+							<input
+								class="input"
+								type="text"
+								name="cpf"
+								id="cpf"
+								placeholder="999.999.999-99"
+								required
+							/>
+							<label class="label" for="birthdate" class="required">Data de nascimento</label>
+							<input class="input" type="date" name="birthdate" id="birthdate" required />
+							<label class="label" for="telephone">Telefone</label>
+							<input
+								class="input"
+								type="tel"
+								name="telephone"
+								id="telephone"
+								placeholder="(99) 99999-9999"
+							/>
+							<label class="label" for="email" class="required">E-mail</label>
+							<input
+								class="input"
+								type="email"
+								name="email"
+								id="email"
+								placeholder="name@example.com"
+								required
+							/>
+						</fieldset>
+						<fieldset class="fieldset">
+							<legend class="legend secondary-title title">Endereço</legend>
+							<label class="label" for="zip-code" class="required">CEP</label>
+							<input
+								class="input"
+								type="text"
+								name="zip-code"
+								id="zip-code"
+								placeholder="99999-999"
+								required
+							/>
+							<label class="label" for="street">Rua</label>
+							<input class="input" type="text" name="street" id="street" />
+							<label class="label" for="number" class="required">Número</label>
+							<input class="input" type="number" name="number" id="number" required />
+							<label class="label" for="complement">Complemento</label>
+							<input
+								class="input"
+								type="text"
+								name="complement"
+								id="complement"
+								placeholder="Apartamento, Bloco, Casa, etc."
+							/>
+							<label class="label" for="neighborhood">Bairro</label>
+							<input class="input" type="text" name="neighborhood" id="neighborhood" />
+							<label class="label" for="city">Cidade</label>
+							<input class="input" type="text" name="city" id="city" />
+							<label class="label" for="state">Estado</label>
+							<input class="input" type="text" name="state" id="state" />
+						</fieldset>
+						<fieldset class="fieldset">
+							<legend class="legend secondary-title title">Dados da mensagem</legend>
+							<label class="label" for="course" class="required">Curso</label>
+							<select class="select" name="course" id="course" required>
+								<option value="" selected disabled>Selecione um curso</option>
+								<option value="ads">Análise e Desenvolvimento de Sistemas</option>
+								<option value="comex">Comércio Exterior</option>
+								<option value="dpp">Desenvolvimento de Produtos Plásticos</option>
+								<option value="dsm">Desenvolvimento de Software Multiplataforma</option>
+								<option value="ge">Gestão Empresarial</option>
+								<option value="rh">Gestão de Recursos Humanos</option>
+								<option value="log">Logística</option>
+								<option value="pol">Polímeros</option>
+							</select>
+							<label class="label" for="subject" class="required">Assunto</label>
+							<select class="select" name="subject" id="subject" required>
+								<option value="compliment">Elogio</option>
+								<option value="suggestion">Sugestão</option>
+								<option value="complaint">Reclamação</option>
+								<option value="outer">Outro</option>
+							</select>
+							<label class="label" for="message" class="required">Mensagem</label>
+							<textarea
+								class="textarea"
+								name="message"
+								id="message"
+								cols="40"
+								rows="10"
+								required
+							></textarea>
+						</fieldset>
+						<fieldset class="fieldset">
+							<button class="button" type="submit">Enviar</button>
+							<button class="button" type="reset">Limpar</button>
+						</fieldset>
+					</form>
+				</div>
+			</section>
 		</main>
-		<section class="section">
-			<div class="container">
-				<form class="form" action="" method="post" name="contact" id="contact">
-					<fieldset class="fieldset">
-						<legend class="legend secondary-title title">Dados Pessoais</legend>
-						<label class="label" for="name" class="required">Nome</label>
-						<input class="input" type="text" name="name" id="name" placeholder="Nome completo" required />
-						<label class="label" for="cpf" class="required">CPF</label>
-						<input class="input" type="text" name="cpf" id="cpf" placeholder="999.999.999-99" required />
-						<label class="label" for="birthdate" class="required">Data de nascimento</label>
-						<input class="input" type="date" name="birthdate" id="birthdate" required />
-						<label class="label" for="telephone">Telefone</label>
-						<input class="input" type="tel" name="telephone" id="telephone" placeholder="(99) 99999-9999" />
-						<label class="label" for="email" class="required">E-mail</label>
-						<input
-							class="input"
-							type="email"
-							name="email"
-							id="email"
-							placeholder="name@example.com"
-							required
-						/>
-					</fieldset>
-					<fieldset class="fieldset">
-						<legend class="legend secondary-title title">Endereço</legend>
-						<label class="label" for="zip-code" class="required">CEP</label>
-						<input
-							class="input"
-							type="text"
-							name="zip-code"
-							id="zip-code"
-							placeholder="99999-999"
-							required
-						/>
-						<label class="label" for="street">Rua</label>
-						<input class="input" type="text" name="street" id="street" />
-						<label class="label" for="number" class="required">Número</label>
-						<input class="input" type="number" name="number" id="number" required />
-						<label class="label" for="complement">Complemento</label>
-						<input
-							class="input"
-							type="text"
-							name="complement"
-							id="complement"
-							placeholder="Apartamento, Bloco, Casa, etc."
-						/>
-						<label class="label" for="neighborhood">Bairro</label>
-						<input class="input" type="text" name="neighborhood" id="neighborhood" />
-						<label class="label" for="city">Cidade</label>
-						<input class="input" type="text" name="city" id="city" />
-						<label class="label" for="state">Estado</label>
-						<input class="input" type="text" name="state" id="state" />
-					</fieldset>
-					<fieldset class="fieldset">
-						<legend class="legend secondary-title title">Dados da mensagem</legend>
-						<label class="label" for="course" class="required">Curso</label>
-						<select class="select" name="course" id="course" required>
-							<option value="" selected disabled>Selecione um curso</option>
-							<option value="ads">Análise e Desenvolvimento de Sistemas</option>
-							<option value="comex">Comércio Exterior</option>
-							<option value="dpp">Desenvolvimento de Produtos Plásticos</option>
-							<option value="dsm">Desenvolvimento de Software Multiplataforma</option>
-							<option value="ge">Gestão Empresarial</option>
-							<option value="rh">Gestão de Recursos Humanos</option>
-							<option value="log">Logística</option>
-							<option value="pol">Polímeros</option>
-						</select>
-						<label class="label" for="subject" class="required">Assunto</label>
-						<select class="select" name="subject" id="subject" required>
-							<option value="compliment">Elogio</option>
-							<option value="suggestion">Sugestão</option>
-							<option value="complaint">Reclamação</option>
-							<option value="outer">Outro</option>
-						</select>
-						<label class="label" for="message" class="required">Mensagem</label>
-						<textarea class="textarea" name="message" id="message" cols="40" rows="10" required></textarea>
-					</fieldset>
-					<fieldset class="fieldset">
-						<button class="button" type="submit">Enviar</button>
-						<button class="button" type="reset">Limpar</button>
-					</fieldset>
-				</form>
-			</div>
-		</section>
 		<footer id="footer" class="flex-container">
 			<div class="container">
 				<p class="paragraph">

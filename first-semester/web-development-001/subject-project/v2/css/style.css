@@ -140,23 +140,32 @@ body {
 }
 
 #main {
-	align-items: center;
-	background: linear-gradient(to bottom, var(--color-accent-tertiary) 200px, var(--color-background-primary) 100px);
+	background: linear-gradient(45deg, var(--color-accent-primary), var(--color-accent-tertiary));
+	display: flex;
 	flex-direction: column;
-	padding-inline: 2rem;
 }
 
 .primary-title {
 	font-size: 3rem;
 }
 
-.section {
+#main-header {
 	color: var(--color-background-primary);
+	padding-block: 4rem;
+	padding-inline: 2rem;
 	text-align: center;
 	text-transform: uppercase;
 }
 
-#main .container {
+#main-content {
+	align-items: center;
+	background: linear-gradient(to bottom, transparent 100px, var(--color-background-primary) 100px);
+	display: flex;
+	flex-direction: column;
+	padding-inline: 2rem;
+}
+
+#main-content .container {
 	background-color: var(--color-background-primary);
 	display: flex;
 	flex-direction: column;
@@ -221,8 +230,7 @@ body {
 }
 
 #header,
-.section,
-#main .container,
+#main-content .container,
 #footer {
 	padding: 2rem;
 }
@@ -230,8 +238,7 @@ body {
 #acessibility-bar,
 #header,
 #nav-bar,
-#main,
-.section,
+#main-header,
 #footer {
 	display: flex;
 	justify-content: center;
@@ -352,7 +359,7 @@ body {
 		color: var(--color-background-primary);
 	}
 
-	#main {
+	#main-content {
 		padding-inline: 0;
 	}
 
