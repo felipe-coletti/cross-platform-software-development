@@ -19,6 +19,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: sans-serif;
+	interpolate-size: allow-keywords;
 }
 
 html {
@@ -118,7 +119,23 @@ body {
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
-	padding: 0.5rem;
+	flex-direction: column;
+	gap: 4px;
+	padding-block: 0.5rem;
+	padding-inline: 0.75rem;
+}
+
+#menu-button::after,
+#menu-button::before {
+	content: '';
+}
+
+#menu-button::after,
+#menu-button::before,
+#menu-button-line {
+	background-color: var(--color-background-primary);
+	height: 2px;
+	width: 20px;
 }
 
 .mobile {
@@ -136,7 +153,7 @@ body {
 
 #mobile-menu.show {
 	border-top: 1px solid var(--color-border-secondary);
-	height: 50vh;
+	height: auto;
 }
 
 #main {
@@ -172,7 +189,15 @@ body {
 	gap: 1.5rem;
 }
 
+.box {
+	border: 1px solid var(--color-border-primary);
+	border-radius: 0.25rem;
+	padding: 0.25rem;
+}
+
 .video {
+	display: flex;
+	height: 100%;
 	width: 100%;
 }
 
@@ -242,6 +267,10 @@ body {
 #footer {
 	display: flex;
 	justify-content: center;
+}
+
+.image {
+	width: 100%;
 }
 
 .form {
@@ -326,8 +355,8 @@ body {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
-		padding-block: 1rem;
-		padding-inline: 0.75rem;
+		padding-block: 0.5rem;
+		padding-inline: 1rem;
 	}
 
 	#menu {
