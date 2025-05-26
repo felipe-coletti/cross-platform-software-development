@@ -1,40 +1,52 @@
-$(document).ready(function() {
-    function clearZipCodeForm() {
-        $("#street").val("")
-        $("#neighborhood").val("")
-        $("#city").val("")
-        $("#uf").val("")
-    }
-    
-    $("#zip-code").blur(function() {
-        var zipCode = $(this).val().replace(/\D/g, "")
+document.addEventListener('DOMContentLoaded', () => {
+	const zipCodeInput = document.getElementById('zip-code')
+	const streetInput = document.getElementById('street')
+	const neighborhoodInput = document.getElementById('neighborhood')
+	const cityInput = document.getElementById('city')
+	const ufInput = document.getElementById('uf')
 
-        if (zipCode != "") {
-            var validateZipCode = /^[0-9]{8}$/
+	function clearZipCodeForm() {
+		streetInput.value = ''
+		neighborhoodInput.value = ''
+		cityInput.value = ''
+		ufInput.value = ''
+	}
 
-            if (validateZipCode.test(zipCode)) {
-                $("#street").val("Carregando...")
-                $("#neighborhood").val("Carregando...")
-                $("#city").val("Carregando...")
-                $("#uf").val("Carregando...")
-               
-                $.getJSON("https://viacep.com.br/ws/" + zipCode + "/json/?callback=?", function(data) {
-                    if (!("erro" in data)) {
-                        $("#street").val(data.patio)
-                        $("#neighborhood").val(data.neighborhood)
-                        $("#city").val(data.locality)
-                        $("#uf").val(data.uf)
-                    } else {
-                        clearZipCodeForm()
-                        alert("CEP não encontrado.")
-                    }
-                });
-            } else {
-                clearZipCodeForm()
-                alert("Formato de CEP inválido.")
-            }
-        } else {
-            clearZipCodeForm()
-        }
-    })
+	zipCodeInput.addEventListener('blur', async () => {
+		const zipCode = zipCodeInput.value.replace(/\D/g, '')
+
+		if (zipCode !== '') {
+			const validateZipCode = /^[0-9]{8}$/
+
+			if (validateZipCode.test(zipCode)) {
+				streetInput.value = 'Carregando...'
+				neighborhoodInput.value = 'Carregando...'
+				cityInput.value = 'Carregando...'
+				ufInput.value = 'Carregando...'
+
+				try {
+					const response = await fetch(`https://viacep.com.br/ws/${zipCode}/json/`)
+					const data = await response.json()
+
+					if (!data.erro) {
+						streetInput.value = data.logradouro || ''
+						neighborhoodInput.value = data.bairro || ''
+						cityInput.value = data.localidade || ''
+						ufInput.value = data.uf || ''
+					} else {
+						clearZipCodeForm()
+						alert('CEP não encontrado.')
+					}
+				} catch (error) {
+					clearZipCodeForm()
+					alert('Erro ao buscar CEP.')
+				}
+			} else {
+				clearZipCodeForm()
+				alert('Formato de CEP inválido.')
+			}
+		} else {
+			clearZipCodeForm()
+		}
+	})
 })
