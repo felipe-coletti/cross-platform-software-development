@@ -1,0 +1,20 @@
+#footer {
+	background-color: var(--color-background-secondary);
+	border-top: 5px solid var(--color-accent-primary);
+	color: var(--color-background-primary);
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+}
+
+#footer .container {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+#footer .paragraph {
+	color: var(--color-text-secondary);
+	text-align: center;
+}

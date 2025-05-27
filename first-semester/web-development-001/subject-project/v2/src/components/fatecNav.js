@@ -1,43 +1,12 @@
-class FatecLayout extends HTMLElement {
+class FatecNav extends HTMLElement {
 	constructor() {
 		super()
 
-		this.originalChildren = Array.from(this.children)
+		this.attachShadow({ mode: 'open' })
 
-		this.innerHTML = `
-          	<header id="header">
-				<div class="container">
-					<a class="logo" href="index.html" title="Voltar para o início">
-						<img
-							class="logo-image"
-							src="assets/images/logo-fatec.png"
-							alt="Logo branca da Fatec da Zona leste"
-						/>
-					</a>
-					<a
-						class="logo"
-						href="https://www.cps.sp.gov.br/"
-						title="Ir para Centro Paula Souza"
-						target="_blank"
-						rel="noopener"
-					>
-						<img class="logo-image" src="assets/images/logo-cps.png" alt="Logo branca do Centro Paula Souza" />
-					</a>
-					<a
-						class="logo"
-						href="https://sp.gov.br/sp"
-						title="Ir para Governo do Estado de São Paulo"
-						target="_blank"
-						rel="noopener"
-					>
-						<img
-							class="logo-image"
-							src="assets/images/logo-governo-do-estado-sp.png"
-							alt="Logo branca do Voverno do Estado de São Paulo"
-						/>
-					</a>
-				</div>
-			</header>
+		this.shadowRoot.innerHTML = `
+			<link rel="stylesheet" href="src/styles/global.css" />
+			<link rel="stylesheet" href="src/styles/nav.css" />
 			<nav id="nav-bar">
 				<div class="container">
 					<ul id="menu" class="list">
@@ -74,26 +43,65 @@ class FatecLayout extends HTMLElement {
 					<li><a class="menu-item" href="contact.html">Fale Conosco</a></li>
 				</ul>
 			</nav>
-			<main id="main"></main>
-			<footer id="footer" class="flex-container">
-				<div class="container">
-					<p class="paragraph">
-						Este é um projeto educacional desenvolvido como exercício acadêmico. Não se trata do site oficial da
-						Fatec Ourinhos.
-					</p>
-					<p class="paragraph">&copy; 2025 Felipe Coletti</p>
-				</div>
-			</footer>
     	`
 	}
 
 	connectedCallback() {
-		const main = this.querySelector('#main')
+		this.setupNavBar()
+		this.setupMobileMenu()
+		this.setupDropdown()
+	}
 
-		this.originalChildren.forEach(child => {
-			main.appendChild(child)
+	setupNavBar() {
+		const currentPage = window.location.pathname.split('/').pop()
+
+		this.shadowRoot.querySelectorAll('.menu-item').forEach(item => {
+			const link = item.getAttribute('href')
+
+			if (link === currentPage) {
+				item.classList.add('active')
+			} else {
+				item.classList.remove('active')
+			}
+		})
+	}
+
+	setupDropdown() {
+		this.shadowRoot.querySelectorAll('.dropdown-label').forEach(item => {
+			item.addEventListener('click', function (e) {
+				e.preventDefault()
+				const parent = this.closest('.dropdown')
+
+				parent.classList.toggle('active')
+
+				document.querySelectorAll('.dropdown').forEach(dropdown => {
+					if (dropdown !== parent) {
+						dropdown.classList.remove('active')
+					}
+				})
+			})
+		})
+	}
+
+	toggleMenu() {
+		const isOpen = this.menuBackdrop.classList.contains('show')
+
+		this.menuBackdrop.classList.toggle('show', !isOpen)
+		this.openMenuButton.setAttribute('aria-expanded', String(!isOpen))
+		this.menuBackdrop.setAttribute('aria-hidden', String(isOpen))
+	}
+
+	setupMobileMenu() {
+		this.openMenuButton = this.shadowRoot.querySelector('#menu-button')
+		this.menuBackdrop = this.shadowRoot.querySelector('#mobile-menu')
+
+		this.openMenuButton.addEventListener('click', () => this.toggleMenu())
+		this.menuBackdrop.addEventListener('click', e => {
+			if (e.target === e.currentTarget) {
+				this.toggleMenu()
+			}
 		})
 	}
 }
 
-customElements.define('fatec-layout', FatecLayout)
+customElements.define('fatec-nav', FatecNav)

@@ -1,0 +1,23 @@
+#header {
+	background-color: var(--color-background-tertiary);
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+}
+
+#header .container {
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+}
+
+.logo-image {
+	height: 90px;
+	max-width: 100%;
+}
+
+@media screen and (max-width: 740px) {
+	#header {
+		display: none;
+	}
+}

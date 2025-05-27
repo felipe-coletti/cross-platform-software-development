@@ -6,9 +6,11 @@
 		<meta name="keywords" content="html, metadados, comentários, layout, listas" />
 		<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
 		<title>Fatec Ourinhos Clone</title>
-		<link rel="stylesheet" href="css/style.css" />
-		<script type="module" src="js/layout.js"></script>
-		<script type="module" src="js/main.js" defer></script>
+		<link rel="stylesheet" href="src/styles/global.css" />
+		<script type="module" src="src/components/fatecHeader.js"></script>
+		<script type="module" src="src/components/fatecNav.js"></script>
+		<script type="module" src="src/components/fatecFooter.js"></script>
+		<script type="module" src="src/components/fatecLayout.js"></script>
 	</head>
 	<body>
 		<fatec-layout>
@@ -28,7 +30,7 @@
 					<div class="box">
 						<img
 							class="image"
-							src="assets/images/layout.png"
+							src="src/assets/images/layout.png"
 							alt="Imagem contendo instruções para criar layouts semânticos em HTML"
 						/>
 					</div>
