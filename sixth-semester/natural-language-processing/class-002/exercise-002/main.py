@@ -18,8 +18,8 @@ def weights(filePath):
     return weights
 
 
-weightsDict = weights('/lexicon.txt')
-print(weightsDict)
+weights_dict = weights('lexicon.txt')
+print(weights_dict)
 
 
 def feeling(phrase, dictionary):
@@ -28,4 +28,4 @@ def feeling(phrase, dictionary):
     return score
 
 
-print(feeling('Está um dia lindo hoje.', weightsDict))
+print(feeling('Está um dia lindo hoje.', weights_dict))

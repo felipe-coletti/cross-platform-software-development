@@ -115,4 +115,5 @@ def normalize_text(text):
     return " ".join(normalized_words)
 
 text = "Vc tava certo, isso eh mt bom!!!"
+
 print(normalize_text(text))

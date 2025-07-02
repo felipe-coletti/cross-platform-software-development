@@ -21,29 +21,29 @@ def vocabulary(list):
     return dict
 
 
-def lexicalRichness(text):
-    textVocabulary = vocabulary(tokens(text))
-    uniqueWordsNumber = sum(1 for wordTimes in textVocabulary.values() if wordTimes == 1)
-    wordsNumber = len(textVocabulary)
-    lexicalRichness = uniqueWordsNumber / wordsNumber
+def lexical_richness(text):
+    text_vocabulary = vocabulary(tokens(text))
+    unique_words_number = sum(1 for word_times in text_vocabulary.values() if word_times == 1)
+    words_number = len(text_vocabulary)
+    lexical_richness = unique_words_number / words_number
 
-    return lexicalRichness
+    return lexical_richness
 
 
-lexicalRichness = {
-    'text1': lexicalRichness(text1),
-    'text2': lexicalRichness(text2),
-    'text3': lexicalRichness(text3)
+lexical_richness = {
+    'text1': lexical_richness(text1),
+    'text2': lexical_richness(text2),
+    'text3': lexical_richness(text3)
 }
 
-lexicalRichnessRanking = {}
+lexical_richness_ranking = {}
 
-for i in sorted(lexicalRichness, key = lexicalRichness.get, reverse=True):
-    lexicalRichnessRanking[i] = lexicalRichness[i]
+for i in sorted(lexical_richness, key = lexical_richness.get, reverse=True):
+    lexical_richness_ranking[i] = lexical_richness[i]
 
-richerText = next(iter(lexicalRichnessRanking))
+richer_text = next(iter(lexical_richness_ranking))
 
-print(f'Texto com a maior riqueza lexical: {richerText}')
+print(f'Texto com a maior riqueza lexical: {richer_text}')
 
 # Extra
-print(f'Textos com maior riqueza lexical: {lexicalRichnessRanking}')
+print(f'Textos com maior riqueza lexical: {lexical_richness_ranking}')

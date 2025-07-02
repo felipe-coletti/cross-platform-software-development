@@ -1,4 +1,4 @@
-def getWeights(filePath):
+def weights(filePath):
     weights = {}
 
     with open(filePath, 'r', encoding='utf-8') as file:
@@ -11,4 +11,4 @@ def getWeights(filePath):
     return weights
 
 
-print(getWeights('/lexicon.txt'))
+print(weights('lexicon.txt'))

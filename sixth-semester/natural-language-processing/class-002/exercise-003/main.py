@@ -2,15 +2,15 @@ import csv
 import re
 
 
-def data(filePath):
+def data(file_path):
     inputs = []
     outputs = []
 
-    with open(filePath, 'r', encoding='utf-8') as file:
-        csvReader = csv.reader(file, delimiter="\t")
-        next(csvReader)
+    with open(file_path, 'r', encoding='utf-8') as file:
+        csv_reader = csv.reader(file, delimiter="\t")
+        next(csv_reader)
 
-        for row in csvReader:
+        for row in csv_reader:
             feeling = row[0]
             feeling = 1 if feeling == 'positivo' else -1 if feeling == 'negativo' else 'neutro'
             phrase = row[1].replace('"', '')
@@ -25,10 +25,10 @@ def tokens(text):
     return re.sub(r'[^\w\s]', '', text).lower().split()
 
 
-def weights(filePath):
+def weights(file_path):
     weights = {}
 
-    with open(filePath, "r", encoding="utf-8") as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         for line in file:
             data = line.strip().split(",")
             word = data[0]
@@ -44,7 +44,7 @@ def feeling(phrase, dictionary):
     return score
 
 
-def analyzeSentiment(phrase, dictionary):
+def analyze_feeling(phrase, dictionary):
     score = feeling(phrase, dictionary)
 
     result = 1 if score > 0 else -1 if score < 0 else 0
@@ -52,12 +52,12 @@ def analyzeSentiment(phrase, dictionary):
     return result
 
 
-def evaluateModel(inputs, outputs):
+def evaluate_model(inputs, outputs):
     tp = fp = fn = tn = 0
 
     for i, sentence in enumerate(inputs):
         try:
-            predicted = analyzeSentiment(sentence, weightsDict)
+            predicted = analyze_feeling(sentence, weights_dict)
             actual = outputs[i]
 
             if predicted == 1:
@@ -80,12 +80,12 @@ def evaluateModel(inputs, outputs):
     return precision, recall, accuracy
 
 
-weightsPath = '/lexicon.txt'
-dataPath = '/sentiment_data.csv'
+weights_path = 'lexicon.txt'
+data_path = 'feeling_data.csv'
 
-weightsDict = weights(weightsPath)
-inputs, outputs = data(dataPath)
-precision, recall, accuracy = evaluateModel(inputs, outputs)
+weights_dict = weights(weights_path)
+inputs, outputs = data(data_path)
+precision, recall, accuracy = evaluate_model(inputs, outputs)
 
 print(f"Precision: {precision:.4f}")
 print(f"Recall: {recall:.4f}")
