@@ -71,7 +71,7 @@ def evaluate_model(inputs, outputs):
                 else:
                     fn += 1
         except Exception as e:
-            print(f"Error analyzing sentence {i}: {e}")
+            print(f"Erro ao analizar a sentença {i}: {e}")
 
     precision = tp / (tp + fp) if (tp + fp) > 0 else 0
     recall = tp / (tp + fn) if (tp + fn) > 0 else 0
@@ -87,6 +87,6 @@ weights_dict = weights(weights_path)
 inputs, outputs = data(data_path)
 precision, recall, accuracy = evaluate_model(inputs, outputs)
 
-print(f"Precision: {precision:.4f}")
-print(f"Recall: {recall:.4f}")
-print(f"Accuracy: {accuracy:.4f}")
+print(f"Precisão: {precision:.4f}")
+print(f"Revocação: {recall:.4f}")
+print(f"Acurácia (Precisão global): {accuracy:.4f}")
